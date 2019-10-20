@@ -1,7 +1,7 @@
 package com.selectiveprocess.client;
 
 import com.selectiveprocess.client.entity.ClientEntity;
-import com.selectiveprocess.client.interfaces.ClientRepository;
+import com.selectiveprocess.client.repository.ClientRepository;
 import com.selectiveprocess.config.BaseIntegrationTest;
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class CrudClientEntityServiceIntegrationTest extends BaseIntegrationTest 
 	@Test
 	public void getClientByNameBeforeSaveClientAfterGetById() {
 		String clientName = "nameClient";
-		int cpf = 1234567890;
+		Long cpf = 1234567890L;
 		String dateOfBirth = "29/05/1989";
 		String address = "Rua Address";
 		ClientEntity client = new ClientEntity(clientName, cpf, dateOfBirth, address);

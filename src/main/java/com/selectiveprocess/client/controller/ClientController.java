@@ -1,8 +1,7 @@
 package com.selectiveprocess.client.controller;
 
 import com.selectiveprocess.client.entity.ClientEntity;
-import com.selectiveprocess.client.interfaces.Client;
-import com.selectiveprocess.client.interfaces.ClientService;
+import com.selectiveprocess.client.service.ClientService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,7 +41,13 @@ public class ClientController implements Client {
 
 	@Override
 	public ClientResponse getClientById(Long clientID) {
-		ClientEntity client = clientService.getClientById(clientID);
+		ClientEntity client = clientService.getClientById(clientID).get();
+		return new ClientResponse(Collections.singletonList(client), Result.builder().message("Success").success(true).build());
+	}
+
+	@Override
+	public ClientResponse getClientByCpf(Long clientCpf) {
+		ClientEntity client = clientService.getClientByCpf(clientCpf);
 		return new ClientResponse(Collections.singletonList(client), Result.builder().message("Success").success(true).build());
 	}
 

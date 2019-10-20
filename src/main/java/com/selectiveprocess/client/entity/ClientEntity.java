@@ -1,12 +1,10 @@
 package com.selectiveprocess.client.entity;
 
-import com.selectiveprocess.client.interfaces.Client;
+import com.selectiveprocess.client.controller.Client;
 import lombok.*;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -18,6 +16,12 @@ import javax.persistence.Table;
 public class ClientEntity extends AbstractPersistable<Long> {
 
     @Id
+    @GeneratedValue(generator = "client_generator")
+    @SequenceGenerator(
+            name = "client_generator",
+            sequenceName = "answer_sequence",
+            initialValue = 1
+    )
     private Long id;
     private String name;
     private Long cpf;
