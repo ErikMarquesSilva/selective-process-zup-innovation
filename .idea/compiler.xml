@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="selec.main" target="1.8" />
+      <module name="selec.test" target="1.8" />
+      <module name="selective-process.main" target="1.8" />
+      <module name="selective-process.test" target="1.8" />
+      <module name="spring-boot-containers.main" target="1.8" />
+      <module name="spring-boot-containers.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
