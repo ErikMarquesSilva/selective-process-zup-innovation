@@ -42,7 +42,7 @@ The project uses docker compose to run the required dependencies(database, servi
 https://www.getpostman.com/collections/d6898f8d4f4f96ce29ba
 
 
-##Starting the containers PostgreSQL and Aplication:
+## Starting the containers PostgreSQL and Aplication:
 ```sh
     ./buildRun.sh
 ```
