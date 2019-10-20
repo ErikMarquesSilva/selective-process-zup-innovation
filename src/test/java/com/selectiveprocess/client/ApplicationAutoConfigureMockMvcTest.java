@@ -22,6 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 public class ApplicationAutoConfigureMockMvcTest {
+	private static final String CONTEXT = "/v1/clients/";
 	private static final Long clientId = 1L;
 	@Autowired private MockMvc mockMvc;
 	@Autowired private ObjectMapper objectMapper;
@@ -32,7 +33,7 @@ public class ApplicationAutoConfigureMockMvcTest {
 
 		this.mockMvc
 				.perform(
-						get("/v1/client/" + clientId)
+						get(CONTEXT + clientId)
 								.contentType(MediaType.APPLICATION_JSON)
 								.accept(MediaType.APPLICATION_JSON))
 				.andDo(print())
@@ -55,12 +56,12 @@ public class ApplicationAutoConfigureMockMvcTest {
 
 		this.mockMvc
 				.perform(
-						post("/v1/client")
+						post(CONTEXT)
 								.contentType(MediaType.APPLICATION_JSON)
 								.content(json)
 								.accept(MediaType.APPLICATION_JSON))
 				.andDo(print())
-				.andExpect(MockMvcResultMatchers.status().isOk())
+				.andExpect(MockMvcResultMatchers.status().isCreated())
 				.andExpect(content().string(containsString("Success")))
 				.andExpect(content().string(containsString(clientId.toString())))
 				.andExpect(content().string(containsString(clientName)));

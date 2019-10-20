@@ -22,7 +22,7 @@ public interface Client {
 	@ResponseStatus(HttpStatus.OK)
 	ClientResponse getClientById(@PathVariable("clientId") Long clientId);
 
-	@GetMapping(value = "/v1/clients/{clientCpf}", produces={MediaType.APPLICATION_JSON_VALUE})
+	@GetMapping(value = "/v1/clients/cpf/{clientCpf}", produces={MediaType.APPLICATION_JSON_VALUE})
 	@ResponseBody
 	@ResponseStatus(HttpStatus.OK)
 	ClientResponse getClientByCpf(@PathVariable("clientCpf") Long clientCpf);
@@ -82,6 +82,17 @@ public interface Client {
 			this.cpf = cpf;
 			this.dateOfBirth = dateOfBirth;
 			this.address = address;
+		}
+
+		@Override
+		public String toString() {
+			return "ClientRequest{" +
+					"id=" + id +
+					", name='" + name + '\'' +
+					", cpf=" + cpf +
+					", dateOfBirth='" + dateOfBirth + '\'' +
+					", address='" + address + '\'' +
+					'}';
 		}
 	}
 }

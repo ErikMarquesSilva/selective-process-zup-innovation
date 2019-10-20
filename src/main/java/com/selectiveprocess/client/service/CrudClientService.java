@@ -74,7 +74,7 @@ public class CrudClientService implements ClientService {
 
 	@Override
 	public boolean existsById(Long clientId) {
-		return getClientById(clientId).isPresent();
+		return clientRepository.findById(clientId).isPresent();
 	}
 
 	private void clientValidate(ClientEntity client) {

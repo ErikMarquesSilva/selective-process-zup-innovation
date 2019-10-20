@@ -37,7 +37,12 @@ Install Docker-Compose
 ## Local environment dependencies
 The project uses docker compose to run the required dependencies(database, services, etc).
 
-Starting the containers:
+## Collections Postman consume API
+
+https://www.getpostman.com/collections/d6898f8d4f4f96ce29ba
+
+
+##Starting the containers:
 ```sh
     ./buildRun.sh
 ```

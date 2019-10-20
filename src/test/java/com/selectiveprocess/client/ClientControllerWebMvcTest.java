@@ -27,6 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(ClientController.class)
 public class ClientControllerWebMvcTest {
 
+	private static final String CONTEXT = "/v1/clients/";
 	private static final Long clientId = 1L;
 
 	@Autowired private MockMvc mockMvc;
@@ -50,7 +51,7 @@ public class ClientControllerWebMvcTest {
 
 		this.mockMvc
 				.perform(
-						post("/v1/client")
+						post(CONTEXT)
 								.contentType(MediaType.APPLICATION_JSON)
 								.content(json)
 								.accept(MediaType.APPLICATION_JSON))
@@ -74,11 +75,11 @@ public class ClientControllerWebMvcTest {
 
 		ClientEntity client = new ClientEntity(clientId, clientName, cpf, dateOfBirth, address);
 
-		when(clientService.getClientById(any())).thenReturn(client);
+		when(clientService.getClientById(any())).thenReturn(java.util.Optional.of(client));
 
 		this.mockMvc
 				.perform(
-						get("/v1/client/" + clientId)
+						get(CONTEXT + clientId)
 								.contentType(MediaType.APPLICATION_JSON)
 								.content(json)
 								.accept(MediaType.APPLICATION_JSON))

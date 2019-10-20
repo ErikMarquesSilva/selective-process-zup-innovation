@@ -14,6 +14,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class HttpRequestTest {
+
+	private static final String CONTEXT = "/v1/clients/";
 	private static final Long clientId = 1L;
 	@LocalServerPort private int port;
 
@@ -28,9 +30,9 @@ public class HttpRequestTest {
 
 		Client.ClientRequest clientRequest = new Client.ClientRequest(clientName, cpf, dateOfBirth, address);
 
-		restTemplate.postForObject("http://localhost:" + port + "/v1/client", clientRequest, String.class);
+		restTemplate.postForObject("http://localhost:" + port + CONTEXT, clientRequest, String.class);
 
-		assertThat(restTemplate.getForObject("http://localhost:" + port + "/v1/client/" + clientId, String.class))
+		assertThat(restTemplate.getForObject("http://localhost:" + port + CONTEXT + clientId, String.class))
 				.contains(clientId.toString())
 				.contains(clientName);
 	}

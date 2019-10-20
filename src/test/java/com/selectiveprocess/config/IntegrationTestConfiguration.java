@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 @Configuration
 public class IntegrationTestConfiguration {
 
-	private static final String DB_NAME = "store";
+	private static final String DB_NAME = "storeTest";
 	private static final String USERNAME = "dbuser";
 	private static final String PASSWORD = "password";
 	private static final String PORT = "5432";
