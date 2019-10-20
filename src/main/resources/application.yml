@@ -23,8 +23,8 @@ spring:
 
 spring.profiles: dev
 
-ENV_DATASOURCE_URL: jdbc:postgresql://postgres/store
-ENV_DATASOURCE_SERVICE_USERNAME: dbuser
-ENV_DATASOURCE_SERVICE_PASSWORD: password
+ENV_DATASOURCE_URL: jdbc:postgresql://postgres/selectiveprocess
+ENV_DATASOURCE_SERVICE_USERNAME: zup
+ENV_DATASOURCE_SERVICE_PASSWORD: zup
 ENV_DRIVER_CLASS_NAME: org.postgresql.Driver
 

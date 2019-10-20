@@ -12,9 +12,9 @@ import javax.sql.DataSource;
 @Configuration
 public class IntegrationTestConfiguration {
 
-	private static final String DB_NAME = "storeTest";
-	private static final String USERNAME = "dbuser";
-	private static final String PASSWORD = "password";
+	private static final String DB_NAME = "selectiveProcessTest";
+	private static final String USERNAME = "zupTest";
+	private static final String PASSWORD = "zupTest";
 	private static final String PORT = "5432";
 	private static final String INIT_SCRIPT_PATH="db/embedded-postgres-init.sql";
 
