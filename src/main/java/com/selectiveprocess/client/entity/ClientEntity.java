@@ -5,6 +5,7 @@ import lombok.*;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -27,6 +28,18 @@ public class ClientEntity extends AbstractPersistable<Long> {
     private Long cpf;
     private String dateOfBirth;
     private String address;
+    private Date created;
+    private Date updated;
+
+    @PrePersist
+    protected void onCreate() {
+        created = new Date();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updated = new Date();
+    }
 
     public ClientEntity(Client.ClientRequest request) {
         this.id = request.getId();
