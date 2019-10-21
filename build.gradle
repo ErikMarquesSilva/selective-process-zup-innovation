@@ -18,7 +18,7 @@ ext {
     springBootVersion = '2.1.7.RELEASE'
     lombokVersion = '1.18.8'
 }
-// In this section you declare where to find the dependencies of your project
+
 repositories {
     mavenCentral()
 }
@@ -28,9 +28,6 @@ bootJar {
     baseName = 'selective-process-zup-innovation'
     version = '0.1.0'
 }
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')

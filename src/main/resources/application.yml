@@ -16,9 +16,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         jdbc.lob.non_contextual_creation: true
         show_sql: true
-        ddl-auto: create
         hbm2ddl:
           auto: create
+
 ---
 
 spring.profiles: dev
